@@ -1,0 +1,34 @@
+.vertical-transtion {
+  transition: top 100ms ease;
+  -moz-transition: top 100ms ease;
+  -webkit-transition: top 100ms ease;
+  -o-transition: top 100ms ease; }
+
+.horizontal-transition {
+ /* transition: left 100ms ease;
+  -moz-transition: left 100ms ease;
+  -webkit-transition: left 100ms ease;
+  -o-transition: left 100ms ease; 
+  */
+  }
+
+#scroller {
+  position: inherit;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0; }
+
+#scroller-ondeck {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0; }
+
+#scroller-recentlyadded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0; }

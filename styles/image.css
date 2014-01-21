@@ -1,0 +1,13 @@
+#image-slideshow {
+    display: block;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    background-color: #000;
+    z-index: 25;
+    text-align: center;
+}
+
+#image-slideshow img {
+    vertical-align: middle;
+}

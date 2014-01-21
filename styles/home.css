@@ -1,0 +1,281 @@
+#home-time {
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  z-index: 20;
+  color: #aaa;
+  font-size: 24px;
+  text-align: right;
+  width: 120px;
+  background-image: url("../images/bullet2.png");
+  background-position: center left;
+  background-repeat: no-repeat; }
+
+#home-time span {
+  color: #d1801c;
+  padding-right: 4px; }
+
+#home-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 720px;
+  width: 420px;
+  font-size: 36px;
+  padding: 0 10px;
+  text-align: right;
+  color: #1E1D1D;
+  z-index: 10;
+  overflow: hidden; 
+  background-image: url("../images/HomeBladeLeft.png");
+  background-position: center right; 
+}
+
+.home-menu-container {
+    display:table-cell; 
+    vertical-align:middle; 
+    height: 720px;
+    width: 420px;  
+
+}
+
+.home-menu-container .home-menu-inner {
+    position: relative;
+    padding-top: 22px;
+}
+
+
+#home-menu .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 720px;
+  width: 235px;
+  background-image: url("../images/CustomHomeLeftOverlay.png");
+  background-position: center center;
+  z-index: 0; }
+
+#home-menu ul {
+  overflow: hidden; 
+  margin: 0;
+}
+
+#home-menu li {
+  padding: 10px 35px; }
+
+#home-menu li:hover {
+  color: #d1801c;
+  cursor: pointer; }
+
+#home-menu .current-scroller {
+  color: #aaa; }
+
+#home-menu #current {
+  color: #d1801c;
+  font-size: 36px; }
+
+.line {
+  position: absolute;
+  left: 0;
+  top: 372px;
+  background-color: black;
+  width: 410px;
+  height: 1px;
+  z-index: -10; }
+  
+#preview-menu {
+  position: absolute;
+  left: 400px;
+  top: 127px;
+  height: 488px;
+  width: 880px;
+  background: black;
+  background-image: url("../images/newlistdoublebgunfocused1.png"); }
+
+#preview-menu ul {
+  padding: 10px 20px;
+  margin: 0;
+  width: 15000px;
+  /* FIXME: no-wrap hack */ }
+
+#preview-menu li {
+  float: left;
+  color: black;
+  margin: 0px 10px 0 10px;
+  /* 10px plus 5 px border */
+  height: 185px; 
+  position: relative;
+}
+
+#preview-menu li div.imagecnt {
+    background-color: rgba(18, 18, 18, 0.6);
+    height: 170px;
+    border-radius: 5px;
+    z-index: 2;
+    position: relative;
+}
+
+#preview-menu li div.imagecnt img {
+  width: 121px;
+  max-height: 170px;
+  z-index: 2;
+  position: relative;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 10px black;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+  
+#preview-menu li img.progress {
+    position: absolute;
+    width: 33px;
+    height: 30px;
+    bottom: 0;
+    left: 39px;
+    z-index: 1;
+    box-shadow: none;
+    border: none!important;
+}
+
+
+#preview-menu li span.episodeseason {
+    position: absolute;
+    color: #fff;
+    z-index: 3;
+    left: 0;
+    top: 147px;
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    height: 23px;
+    line-height: 23px;
+    opacity: 0.8;
+    box-shadow: 2px 2px 10px black;
+    box-sizing: border-box;    
+}
+
+#preview-menu li span.photo-subtitle {
+   position: absolute; 
+   width: 100%;
+   background-color: #000;
+   color: #fff;
+   text-align: center;
+   bottom: 0;
+   left: 0;
+   z-index: 3;
+   opacity: 0.8;
+   height: 40px;
+   line-height: 40px;
+   border-radius: 5px;
+   white-space: pre-wrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+
+
+#preview-menu li:hover {
+    /*
+  height: 150px;
+  background-image: url("../images/PosterSelected.png");
+  background-repeat: no-repeat;
+  padding: 5px;
+  margin: 10px; 
+  */
+}
+
+#preview-menu li:hover img {
+  border-radius: 5px; }
+
+#preview-menu h1 {
+  position: absolute;
+  width: 550px;
+  color: #d1801c;
+  left: 35px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal; }
+
+#ondeck-title {
+  top: 9px; }
+
+#ondeck-title span {
+  color: white; }
+
+#recentlyadded-title {
+  bottom: 9px; }
+
+#recentlyadded-title span {
+  color: white; }
+
+span img {
+  vertical-align: middle;
+  padding: 0 2px;
+  width: 10px; }
+
+#preview-menu h2 {
+  position: absolute;
+  width: 200px;
+  text-align: right;
+  color: #d1801c;
+  left: 670px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal; }
+
+#preview-menu h2.ondeck {
+  height: 39px; 
+  line-height: 39px; 
+}
+
+#preview-menu h2.recentlyadded {
+  bottom: 9px; }
+
+#ondeck-menu {
+  position: relative;
+  top: 39px;
+  height: 216px;
+  overflow: hidden; }
+
+#recentlyadded-menu {
+  position: relative;
+  top: 30px;
+  height: 200px;
+  overflow: hidden; }
+
+#recentlyadded-menu .current-scroller #current-recentlyadded {
+    /*
+  height: 150px;
+  background-image: url("../images/PosterSelected.png");
+  background-repeat: no-repeat;
+  padding: 5px;
+  margin: 10px; 
+  */
+  }
+
+#recentlyadded-menu .current-scroller #current-recentlyadded img, #recentlyadded-menu img:hover {
+    border-radius: 5px;
+    border: 4px solid rgb(255, 173, 0); 
+}
+
+#ondeck-menu .current-scroller #current-ondeck {
+    /*
+  height: 150px;
+  background-image: url("../images/PosterSelected.png");
+  background-repeat: no-repeat;
+  padding: 5px;
+  margin: 10px; 
+  */
+  }
+
+#ondeck-menu .current-scroller #current-ondeck img, #ondeck-menu img:hover {
+  border-radius: 5px;
+  border: 4px solid rgb(255, 173, 0); 
+}
+
+#recentlyadded-menu .current-scroller #current-recentlyadded span.episodeseason, #ondeck-menu .current-scroller #current-recentlyadded span.episodeseason {
+     left: 4px;
+     width: 113px;
+     height: 19px;
+}
