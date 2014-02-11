@@ -20,6 +20,8 @@ function SimpleMenuView(media, type, returnView) {
 
     function show() {
         view.style.display = 'block';
+  
+        DOM.addClass(view.firstChild, 'active');
     }
     function hide() {
         DOM.removeClass(active, 'active');

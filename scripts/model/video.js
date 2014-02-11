@@ -27,10 +27,12 @@ function Video(elem) {
             //return 'video/x-matroska';
         }
         if (container === 'mpeg') {
-            return 'video/mpeg';
+            //return 'video/mpeg';
+            return 'application/x-netcast-av';
         }
         if (container === 'avi') {
-            return 'video/avi';
+            //return 'video/avi';
+            return 'application/x-netcast-av';
         }
         // try to show
         return "application/x-netcast-av";
@@ -48,7 +50,9 @@ function Video(elem) {
             bitrate: stream.getAttribute('bitrate'),
             framerate: stream.getAttribute('frameRate'),
             profile: stream.getAttribute('profile'),
-            level: stream.getAttribute('level')
+            level: stream.getAttribute('level'),
+            width: stream.getAttribute('width'),
+            height: stream.getAttribute('height')
         };
     }
 
@@ -64,13 +68,13 @@ function Video(elem) {
             bitrate: stream.getAttribute('bitrate')
         };
     }
-    
+
 	var key = elem.getAttribute('key');
     var ratingKey = elem.getAttribute('ratingKey');
 	var title = elem.getAttribute('title');
 	var type = elem.getAttribute('type');
 	var summary = elem.getAttribute('summary');
-	var year = elem.getAttribute('year');
+    var year = elem.getAttribute('year');
 
     var season = elem.getAttribute('parentIndex');
     var episode = elem.getAttribute('index');
@@ -186,6 +190,7 @@ function Video(elem) {
         duration: duration,
         viewCount: viewCount,
         viewOffset: viewOffset,
-        stream: streamInformation
+        stream: streamInformation,
+        resolution: resolution
 	};
 }

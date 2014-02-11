@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.1.220:32400/photo/:/transcode?width=1280&height=720&url=http%3A%2F%2F192.168.1.220%3A32400%2Flibrary%2Fmetadata%2F164%2Fart%2F1389056563", true);
+xhr.responseType = "arraybuffer";
+xhr.onload = function( e ) {
+    // Obtain a blob: URL for the image data.
+    var arrayBufferView = new Uint8Array( this.response );
+    var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+    var urlCreator = window.URL || window.webkitURL;
+    var imageUrl = urlCreator.createObjectURL( blob );
+    var img = document.querySelector( "#photo" );
+    img.src = imageUrl;
+};
+
+xhr.send();
+
+//var myblob = new Blob([n.response],{type:"image/jpeg"});
+//i=window.URL.createObjectURL(e);
+</script>
+
+<img id="photo"/>
+
+</body>
+
+
+
+</html>

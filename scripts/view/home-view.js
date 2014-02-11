@@ -360,6 +360,7 @@ function HomeView() {
             imageContainer.appendChild(photoTitle);
             if(episdeSeason)
             item.appendChild(episdeSeason);
+            if(progressImage)
             item.appendChild(progress); 
             list.appendChild(item);
 

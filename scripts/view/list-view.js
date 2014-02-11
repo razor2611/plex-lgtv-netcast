@@ -163,21 +163,12 @@ function ListView(uri, returnView) {
         summary.innerHTML = (media.summary) ? media.summary.encodeHTML() : '';
 
         container.appendChild(summary);
-        // console.log("Tt");
+
         if (media.thumb) {
             var thumb = new Image();
-            
-            if (Settings.useBlobs()) {
-              if(Blobs.retrieveBlob(media.thumb, "large")) 
-              thumb.src = Blobs.retrieveBlob(media.thumb, "large");  
-              else
-              thumb.src = plexAPI.getScaledImageURL(plexAPI.getURL(media.thumb), 245, 360);
-            }
-            else
-              thumb.src = plexAPI.getScaledImageURL(plexAPI.getURL(media.thumb), 245, 360);
-              
+            thumb.src = plexAPI.getScaledImageURL(plexAPI.getURL(media.thumb), 245, 360);     
             thumb.style.width = '245px';
-            thumb.style.height = '360px';
+            //thumb.style.height = '360px';
             container.appendChild(thumb);
         }
         return container;
@@ -206,11 +197,12 @@ function ListView(uri, returnView) {
                     builder.push('<img src="images/OverlayUnwatched.png" alt="" />');
                 }
             }
-           // console.log(builder);
+
             var item = document.createElement('li');
             item.innerHTML = builder.join(' ');
             item.setAttribute('data-index', i);
-
+            item.setAttribute('data-key', media.key);
+            
             scroller.appendChild(item);
 
              //Build the poster blobs
@@ -258,13 +250,17 @@ function ListView(uri, returnView) {
         var selected = nav.current();
         var idx = parseInt(selected.getAttribute('data-index'), 10);
         var media = mediaContainer.media[idx];
-
+        
         var key = media.key;
         var isContainer = media.container;
 
         if (isContainer) {
             window.view = new ListView(plexAPI.getURL(key, uri), this);
             window.view.render();
+        }
+        else if(media.type == "photo")
+        {
+            window.view = new ImageView(key, idx, this);
         }
         else {
             var offset = media.viewOffset;

@@ -181,7 +181,6 @@ function PlayerView(uri, useViewOffset, returnView) {
 
         document.getElementById('total-duration').innerHTML = Time.format(totalDuration);
     }
-    
 
     function checkPlayState() {
         console.log('Player state: ' + video.playState);
@@ -284,13 +283,7 @@ function PlayerView(uri, useViewOffset, returnView) {
         // TODO: 4 is the constant test speed. If it works use incremental speed
         video.play(direction*4);
     }
-    
-    /** set the default aspect ratio */
-    function setDefaultAspectRatio()
-    {
-      //  window.NetCastSetDefaultAspectRatio('original');
-    }
-    
+/*
 	this.onUp = function () {
        if(active)
        active.onUp();
@@ -335,7 +328,7 @@ function PlayerView(uri, useViewOffset, returnView) {
     this.onStop = function () {
         closePlayer();
     };
-    
+*/    
 
 	this.render = function (container) {   
                 
@@ -361,11 +354,8 @@ function PlayerView(uri, useViewOffset, returnView) {
         if (media.mimeType) {
             video.type = media.mimeType;
         }
-        setDefaultAspectRatio();
-        video.play(1);
-        video.width = media.stream.video.width;
-        video.height = media.stream.video.height;
-       // console.log(media.stream.video.width)
+       
+        //video.play(1);
          
         // Update process bar every second
         processTimer = setInterval(updateElapsedTime, 1000);
@@ -388,11 +378,11 @@ function PlayerView(uri, useViewOffset, returnView) {
            video.subtitleOn=true;                         
         }
         
-        subsmenu = new SimpleMenuView(media, "subs");
+       // subsmenu = new SimpleMenuView(media, "subs");
         
 	};
 
-
+/*
     loading = true;
     document.getElementById('video-loading').style.display = 'block';
 
@@ -401,5 +391,26 @@ function PlayerView(uri, useViewOffset, returnView) {
 	plexAPI.browse(uri, function(container) {
 		scope.render(container);
 	});
+*/  
+        var videoPath;
+        
+        plexAPI.browse(uri, function(container) {
+            var media = container.media[0];
+            videoPath = plexAPI.getURL(media.url);
+            
+            
+        var app = new lge();
+        app.createVideoPlayer($("#lgplayer"), true, videoPath);
+        app.createSettingsPlayer(media);
+        app.switchToFullScreenMode(true);
+            //console.log(container);
+          //  scope.render(container);
+        });
+        document.getElementById('lgplayer').style.top = '0';
+        
+
+        
+        console.log("pornire player");
+    
     
 }

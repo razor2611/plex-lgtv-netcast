@@ -61,11 +61,8 @@ function Settings() {
         if (_debug) {
             activateDebug(_debugUUID);
         }
-        
-      //  if()
-        
-        
-        
+         
+       
         console.log('Using PMS: ' + _pms);
         return _pms !== null && _pms !== undefined;
     };

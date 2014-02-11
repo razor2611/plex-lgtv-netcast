@@ -32,8 +32,6 @@ function Photo(elem) {
           }    
     }
     
-      
-       
     return {
         key: key,
         parent: parent,
